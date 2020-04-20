@@ -20,9 +20,9 @@ package and requires their own implementation.
 This package aims to solve it.
 
 # TODO:
-[ ] rfc1738
-[ ] rfc3986
-[ ] rfc6874
+ - [ ] rfc1738
+ - [ ] rfc3986
+ - [ ] rfc6874
 
 # License
 
