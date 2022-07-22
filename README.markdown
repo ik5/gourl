@@ -20,9 +20,10 @@ package and requires their own implementation.
 This package aims to solve it.
 
 # TODO:
- - [ ] rfc1738
- - [ ] rfc3986
- - [ ] rfc6874
+ - [ ] [rfc3986](https://www.rfc-editor.org/rfc/rfc3986)
+ - [ ] [rfc6874](https://www.rfc-editor.org/rfc/rfc6874)
+ - [ ] [rfc7320](https://www.rfc-editor.org/rfc/rfc7320) / [rfc8820](https://www.rfc-editor.org/rfc/rfc8820)
+ - [ ] [rfc8141](https://www.rfc-editor.org/rfc/rfc8141.html)
 
 # License
 
