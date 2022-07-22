@@ -5,6 +5,7 @@ custom parser based on scheme.
 
 
 https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Example_URIs
+
           userinfo       host      port
           ┌──┴───┐ ┌──────┴──────┐ ┌┴┐
   https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top
