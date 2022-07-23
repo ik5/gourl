@@ -16,6 +16,10 @@ type CredentialsElement struct {
 	Password string
 }
 
+// ParserRegister holds callback regarding each type of parser
+type ParserRegister struct {
+}
+
 // URL holds information regarding the full components of address.
 //
 // Important: Order of struct is based on memory alignment for better
