@@ -30,10 +30,10 @@ type ParserRegister struct {
 	// PathParser get a raw path and breaks it out for it's component
 	PathParser func(rawPath string) (PathElement, error)
 
-	// QueryParser get a raw query and place it for it's components
+	// QueryParser get a raw query and place it for it's components.
 	QueryParser func(rawQuery string) (QueryValue, error)
 
-	// ExtraInfoParser parses from rawURL the protocol extra components
+	// ExtraInfoParser parses from rawURL the protocol extra components.
 	ExtraInfoParser func(rawURL string) (interface{}, error)
 }
 
