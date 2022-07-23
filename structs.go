@@ -37,6 +37,10 @@ type ParserRegister struct {
 	ExtraInfoParser func(rawURL string) (interface{}, error)
 }
 
+// GeneratorRegister holds callbacks
+type GeneratorRegister struct {
+}
+
 // URL holds information regarding the full components of address.
 //
 // Important: Order of struct is based on memory alignment for better
