@@ -7,8 +7,7 @@ func Parse(url string) (URL, error) {
 }
 
 // ParseScheme parses the base request scheme as first action.
-// The parser uses the defenition based on specification:
-//   scheme = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." )
+// The parser uses the definition based on RFC 3986 specification.
 func ParseScheme(url string) (string, error) {
 	result := ""
 
