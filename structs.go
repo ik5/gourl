@@ -16,8 +16,25 @@ type CredentialsElement struct {
 	Password string
 }
 
-// ParserRegister holds callback regarding each type of parser
+// ParserRegister holds callback regarding each type of parser.
+// Only non empty callback will override existed parser.
 type ParserRegister struct {
+
+	// RawParser is the main parser after finding out what is the Scheme.
+	RawParser func(rawURL string) (URL, error)
+
+	// AuthorityParser parses rawURL and place authority components to
+	// Credentials, host and port.
+	AuthorityParser func(rawURL string) (CredentialsElement, string, int, error)
+
+	// PathParser get a raw path and breaks it out for it's component
+	PathParser func(rawPath string) (PathElement, error)
+
+	// QueryParser get a raw query and place it for it's components
+	QueryParser func(rawQuery string) (QueryValue, error)
+
+	// ExtraInfoParser parses from rawURL the protocol extra components
+	ExtraInfoParser func(rawURL string) (interface{}, error)
 }
 
 // URL holds information regarding the full components of address.
@@ -53,10 +70,6 @@ type URL struct {
 
 	// RawRequest holds the raw URL prior of parsing.
 	RawRequest string
-
-	// WithAuthority is set to true if the protocol supports authority
-	// mechanism (username and password) such as HTTP, FTP and more.
-	WithAuthority bool
 
 	// Port holds information regarding the port component.
 	Port int
