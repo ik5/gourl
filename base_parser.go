@@ -52,8 +52,5 @@ func ParseScheme(url string) (string, error) {
 		}
 	}
 
-	if gostrutils.IsEmpty(result) {
-		return "", ErrNoScheme
-	}
 	return result, nil
 }

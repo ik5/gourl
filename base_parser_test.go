@@ -26,21 +26,27 @@ func TestParseScheme(t *testing.T) {
 		{".dot://[:::1]/", "", ErrInvalidScheme},
 		{"-minus://127.0.0.1/", "", ErrInvalidScheme},
 		{"+plus:xyz", "", ErrInvalidScheme},
+
+		// Invalid middle char
+		{"aאbc:xyz", "", ErrInvalidScheme},
+		{"http$://www.example.com/", "", ErrInvalidScheme},
+		{"ma[]ilto:foo@example.com", "", ErrInvalidScheme},
 	}
 
 	for _, scheme := range schemeList {
 		result, err := ParseScheme(scheme.url)
-		if err != scheme.err {
-			t.Errorf(
-				"Run over '%s', expected err '%#v' got '%#v'",
-				scheme.url, scheme.err, err,
-			)
-		}
 
 		if result != scheme.expected {
 			t.Errorf(
 				"Run over '%s', expected '%s', got '%s'",
 				scheme.url, scheme.expected, result,
+			)
+
+		}
+		if err != scheme.err {
+			t.Errorf(
+				"Run over '%s', expected err '%#v' got '%#v'",
+				scheme.url, scheme.err, err,
 			)
 		}
 	}
