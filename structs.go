@@ -75,6 +75,9 @@ type URL struct {
 	// RawRequest holds the raw URL prior of parsing.
 	RawRequest string
 
+	// RawQuery holds the raw query prior of parsing.
+	RawQuery string
+
 	// Port holds information regarding the port component.
 	Port int
 }
