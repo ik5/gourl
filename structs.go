@@ -3,17 +3,22 @@ package gourl
 // PathElement breaks down path elements based on protocol rules
 type PathElement map[string][]string
 
-// QueryValue holds information regarding query arguments of key values, including repeated versions of them (based on RFCs).
+// QueryValue holds information regarding query arguments of key values,
+// including repeated versions of them (based on RFCs).
 type QueryValue map[string][]string
 
 // CredentialsElement holds information regarding the username and password
 // provided by the URL.
 type CredentialsElement struct {
+	// The username part of the credentials
 	Username string
 
 	// Password is a clear text version of what was provided, please use with
 	// care.
 	Password string
+
+	// user:pass or user only as appears at the string in raw form
+	RawCredentails string
 }
 
 // ParserRegister holds callback regarding each type of parser.
