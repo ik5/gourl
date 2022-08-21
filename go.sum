@@ -1,3 +1,5 @@
+github.com/go-test/deep v1.0.8 h1:TDsG77qcSprGbC6vTN8OuXp5g+J+b5Pcguhf7Zt61VM=
+github.com/go-test/deep v1.0.8/go.mod h1:5C2ZWiW0ErCdrYzpqxLbTX7MG14M9iiw8DgHncVwcsE=
 github.com/ik5/gostrutils v0.0.19 h1:0eLEBPLaMLwpOieDhIGtw7EAEpN+cQWRYD4vi+SleRo=
 github.com/ik5/gostrutils v0.0.19/go.mod h1:Iiiccc3T6b5C9J8HHoFjfP2j0qaqdaU3Fu3MdggoEsQ=
 golang.org/x/text v0.3.3 h1:cokOdA+Jmi5PJGXLlLllQSgYigAEfHXJAERHVMaCc2k=
