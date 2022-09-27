@@ -24,6 +24,7 @@ This package aims to solve it.
  - [ ] [rfc6874](https://www.rfc-editor.org/rfc/rfc6874)
  - [ ] [rfc7320](https://www.rfc-editor.org/rfc/rfc7320) / [rfc8820](https://www.rfc-editor.org/rfc/rfc8820)
  - [ ] [rfc8141](https://www.rfc-editor.org/rfc/rfc8141.html)
+ - [ ] [rfc3987](https://www.rfc-editor.org/rfc/rfc3987.html)
 
 # License
 
