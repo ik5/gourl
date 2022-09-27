@@ -74,6 +74,7 @@ func TestParseRegex(t *testing.T) {
 			err:    nil,
 			url: URL{
 				RawRequest: "ftp://[::1]/",
+				RawPath: "/",
 				Host:       "[::1]",
 				Scheme:     "ftp",
 				Port:       0,
