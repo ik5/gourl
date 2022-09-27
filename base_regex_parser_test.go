@@ -80,6 +80,23 @@ func TestParseRegex(t *testing.T) {
 				Port:       0,
 			},
 		},
+		{
+			rawURL: "http://www.עברית.com/",
+			err: nil,
+			url: URL{
+				RawRequest: "http://www.עברית.com/",
+				Scheme: "http",
+				RawPath: "/",
+				Host: "www.עברית.com",
+			},
+		},
+		{ // https://daniel.haxx.se/blog/2022/09/08/http-http-http-http-http-http-http/
+			rawURL: "http://http://http://@http://http://?http://#http://",
+			err : nil,
+			url: URL{
+				RawRequest: "http://http://http://@http://http://?http://#http://",
+			},
+		},
 	}
 
 	for idx, toCheck := range urlToCheck {
