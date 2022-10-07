@@ -74,7 +74,7 @@ func TestParseRegex(t *testing.T) {
 			err:    nil,
 			url: URL{
 				RawRequest: "ftp://[::1]/",
-				RawPath: "/",
+				RawPath:    "/",
 				Host:       "[::1]",
 				Scheme:     "ftp",
 				Port:       0,
@@ -82,19 +82,25 @@ func TestParseRegex(t *testing.T) {
 		},
 		{
 			rawURL: "http://www.עברית.com/",
-			err: nil,
+			err:    nil,
 			url: URL{
 				RawRequest: "http://www.עברית.com/",
-				Scheme: "http",
-				RawPath: "/",
-				Host: "www.עברית.com",
+				Scheme:     "http",
+				RawPath:    "/",
+				Host:       "www.עברית.com",
 			},
 		},
 		{ // https://daniel.haxx.se/blog/2022/09/08/http-http-http-http-http-http-http/
 			rawURL: "http://http://http://@http://http://?http://#http://",
-			err : nil,
+			err:    nil,
 			url: URL{
-				RawRequest: "http://http://http://@http://http://?http://#http://",
+				RawRequest:  "http://http://http://@http://http://?http://#http://",
+				RawPath:     "//http://@http://http://",
+				Fragment:    "http://",
+				Scheme:      "http",
+				Host:        "http",
+				RawQuery:    "?http://",
+				Credentials: CredentialsElement{},
 			},
 		},
 	}
@@ -108,7 +114,7 @@ func TestParseRegex(t *testing.T) {
 		diff := deep.Equal(url, toCheck.url)
 		if diff != nil {
 			t.Errorf(
-				"%d. expected url to be the same but %+v diff.\n%+v != %+v",
+				"%d. expected url to be the same but %+v diff.\n%+v\n!=\n%+v\n",
 				idx, diff, url, toCheck.url,
 			)
 		}
